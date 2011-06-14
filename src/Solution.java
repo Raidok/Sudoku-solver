@@ -21,22 +21,23 @@ public class Solution {
       
 //      System.out.println("rida "+row+" veerg "+col);
       
-      if (cells.getCell(row, col) == 0) {
-         for (int val = 1; val <= size; val++) {
-            boolean legal = isLegal(col, row, val);
-//            System.out.println("r"+row+" v"+col+" -> "+val+" "+legal);
-            if (legal) {
-               cells.setCell(row, col, val);
-               break;
+      if (cells.getCell(row, col) == 0) { // is cell preset or not?
+         for (int val = 1; val <= size; val++) { // loop through valid values
+            if (isLegal(col, row, val)) { // can this value be put in current cell
+               cells.setCell(row, col, val); // sets cell's value
+               
+               if (count < (size*size)) {
+                  return solve(size, count);
+               } else {
+                  return true;
+               }
             }
-         }
-         if (cells.getCell(row, col) == 0) {
-            return false;
-         }
+         } // end of loop through valid values
+         return false;
       }
       
       count++;
-      if (count < (size*size)) return solve(size, count);
+      
       return true;
    }
    
