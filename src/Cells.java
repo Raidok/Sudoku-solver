@@ -32,7 +32,12 @@ public class Cells {
          if (j % 3 == 0) System.out.println(" +-------+-------+-------+ ");
          for (int i=0; i<cells.length; i++) {
             if (i % 3 == 0) System.out.print(" |");
-            System.out.print(" " + cells[j][i]);
+            System.out.print(" ");
+            if (cells[j][i] != 0) {
+               System.out.print(cells[j][i]);
+            } else {
+               System.out.print(" ");
+            }
          }
          System.out.println(" |");
       }
