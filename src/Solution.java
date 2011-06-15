@@ -12,8 +12,6 @@ public class Solution {
       if (solve(size, 0)) {
          System.out.println("Solution found in "+(System.currentTimeMillis()-start)+" ms!");
          output();
-      } else {
-         System.out.println("No solution.");
       }
    }
    
