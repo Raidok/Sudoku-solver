@@ -56,6 +56,12 @@ public class Main {
       System.out.println("SOLUTION:");
       new Solution(cells);
       
+      // manual input
+      
+      Cells cellsm = new Cells(9);
+      cellsm.input();
+      cellsm.output();
+      new Solution(cellsm);
    }
    
    
