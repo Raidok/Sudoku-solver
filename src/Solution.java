@@ -20,10 +20,9 @@ public class Solution {
    }
    
    private boolean solve(int size, int count) {
-      if (count+1 == (size*size)) return true;
+      if (++count == (size*size)) return true;
       int row = count / size;
       int col = count % size;
-      count++;
       
       if (cells.getCell(row, col) == 0) { // is cell preset or not?
          for (int val = 1; val <= size; val++) { // loop through valid values
@@ -41,8 +40,8 @@ public class Solution {
    
    private boolean isLegal(int row, int col, int value) {
       int i = 0, j = 0;
-      int left = col / 3;
       int top = row / 3;
+      int left = col / 3;
       for (int[] rowOfCells : cells.getCells()) {
          for (int cellValue : rowOfCells) {
             if ((j == row || i == col || (left == i/3 && top == j/3)) && cellValue == value) {
