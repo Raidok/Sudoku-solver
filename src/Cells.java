@@ -28,11 +28,14 @@ public class Cells {
    }
    
    public void output() {
-      for (int[] row : cells) {
-         for (int cell : row) {
-            System.out.print(" " + cell);
+      for (int j=0; j<cells.length; j++) {
+         if (j % 3 == 0) System.out.println(" +-------+-------+-------+ ");
+         for (int i=0; i<cells.length; i++) {
+            if (i % 3 == 0) System.out.print(" |");
+            System.out.print(" " + cells[j][i]);
          }
-         System.out.println();
+         System.out.println(" |");
       }
+      System.out.println(" +-------+-------+-------+ ");
    }
 }
