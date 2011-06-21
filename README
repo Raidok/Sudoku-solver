@@ -1,0 +1,9 @@
+A nice little program that solves Sudokus.
+
+When running it, it first solves the one that is displayed on Sudoku's Wikipedia page and then lets you insert one manually.
+
+Enter a number and press enter, if the cell should be empty, just press enter and move along with insertions.
+
+After inserting, it tries to solve it. If you inserted the numbers by random or made a mistake it probably would search for the solution for ages because I havn't made a emergency escape for it.
+
+Cheers!
