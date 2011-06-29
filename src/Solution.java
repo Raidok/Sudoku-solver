@@ -24,9 +24,9 @@ public class Solution {
    }
 
    private boolean solve(int size, int count) {
-      if (++count == (size*size)) return true;
       int row = count / size;
       int col = count % size;
+      if (count++ == (size*size)) return true;
       
       if (cells.getCell(row, col) == 0) { // is cell preset or not?
          for (int val = 1; val <= size; val++) { // loop through valid values
