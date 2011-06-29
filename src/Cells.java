@@ -48,20 +48,27 @@ public class Cells {
       try {
          BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
          line = is.readLine();
-         if (!"".equals(line)) {
-            try {
-               value = Integer.parseInt(line);
-            } catch (NumberFormatException e) {
-               value = -1;
-            }
-            if (0 > value || value > this.size) {
-               System.out.print(" again : ");
-               value = readCell(row, col);
-            }
-         }
-         
+         value = parse(line);
       } catch (IOException e) {
          e.printStackTrace();
+      } catch (Exception e) {
+         System.out.print(" again : ");
+         value = readCell(row, col);
+      }
+      return value;
+   }
+   
+   public int parse(String line) throws Exception {
+      int value = 0;
+      if (!"".equals(line)) {
+         try {
+            value = Integer.parseInt(line);
+         } catch (NumberFormatException e) {
+            throw new Exception("Not a number!");
+         }
+         if (value < 1 || value > this.size) {
+            throw new Exception("Out of range!");
+         }
       }
       return value;
    }
