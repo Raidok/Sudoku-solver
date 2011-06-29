@@ -19,6 +19,10 @@ public class Solution {
       cells.output();
    }
    
+   public Cells getCells() {
+      return cells;
+   }
+
    private boolean solve(int size, int count) {
       if (++count == (size*size)) return true;
       int row = count / size;
